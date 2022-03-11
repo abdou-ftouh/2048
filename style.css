@@ -39,9 +39,9 @@ body{
     text-align: center;
     size: 30px;
 }
-/* .blue{
+.blue{
   
-       
+        /* the blue cell of the number 2 */
        justify-content: center;
        align-items: center;
        display: flex;
@@ -50,5 +50,4 @@ body{
        font-weight: bold;
        background: blue;
    
-} */
- /* the blue cell of the number 2 */
+}
