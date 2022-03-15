@@ -8,22 +8,30 @@
     <title>2048 Game</title>
 </head>
 <body>
+
     <header>
-        <h1>2048</h1>
+        <h1 class="title">
+            <strong >2</strong>
+            <strong >0</strong>
+            <strong >4</strong>
+            <strong >8</strong>
+        </h1>
         <div class="myScore">
-            <div class="scoreNumber">Score</div>
-            <span id="score">0</span>   
+            <div class="scoreNumber">Score:   <span id="score"> 0</span> </div>
+          
         </div>
-        <div class="mybest">
-            <div class="bestscore">Best</div>
-            <span id="best">0</span>
-        </div>
-        <div id="total">100</div>
+       
 
     </header>
-    <main>
+   
+    <main >
+        
+        <p>Join the numbers and get to the 2048 tile!</p>
+    
         <div class="container">
+        
             <div class="grid_container">
+           
               <div class="hidden" id="1"></div>
               <div class="hidden" id="2"></div>
               <div class="hidden" id="3"></div>
@@ -44,9 +52,15 @@
           </div>
         
           <section class="controls">
-            <button id="reset">Reset</button>
+            
+            <img  id="resetBut" onclick="gameReset()" src="http://www.clker.com/cliparts/J/h/P/T/m/3/restart-yellow-icon.svg.hi.png">
+            <h2>New Game</h2>
         </section>
+        
     </main>
     <script src="script.js"></script>
+    <footer>
+        <p>© Abdeslam El Ftouh</p>
+    </footer>
 </body>
 </html>
