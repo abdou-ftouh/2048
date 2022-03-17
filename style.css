@@ -2,7 +2,6 @@ body{
     background-color: rgb(221, 198, 167);
 
 }
-
 header{
     margin: 10px 20px 20px 20px;
     padding: auto;
@@ -11,12 +10,9 @@ header{
    
     flex-direction: column;
 }
-/* div.container{
-    background-image: url("https://media0.giphy.com/media/2gtoSIzdrSMFO/giphy.gif");
-} */
+
 .centre{
     display: flex;
-  
     justify-content:center;
     padding: 0%;
 
@@ -35,7 +31,6 @@ header{
     color: white;
     text-shadow: 4px 4px 5px black;
     align-items: center ;
-  
   
 }
 img{
@@ -65,12 +60,14 @@ h1.title strong:nth-child(4){
 }
 
 h2{
-    font-size: 70px;
-    color: white;
+    font-size: 53px;
+    color: #ece5e5;
     text-shadow: 4px 4px 5px black;
     font-weight: 500;
-    
-    
+    border: 6px solid #3e3939;
+    background: #504343;
+    padding: 5px 5px 5px 5px;
+    border-radius: 14px;
    
 }
 p{
@@ -90,14 +87,17 @@ footer{
     display: inline-flex;
     position: relative;
    
-
-    /* url("https://media0.giphy.com/media/2gtoSIzdrSMFO/giphy.gif"); */
     
 
 }
 .game-over{
     background-image: url("https://media0.giphy.com/media/2gtoSIzdrSMFO/giphy.gif");
     background-position: 100% ;
+   
+}
+.loser{
+    background-image: url("https://esquilo.io/png/thumb/Zbx2mKytQmahCAF-Game-Over-PNG-File.png");
+    background-size:  650px 650px ;
    
 }
 .grid_container{
@@ -107,13 +107,14 @@ footer{
     grid-template-rows: repeat(4, 150px);
     grid-gap: 10px;
     text-align: center;
-  
+ 
     
    
 }
 #key{
-    height: 40%;
-    width: 17%;
+    height: 100px;
+    width: 170px;
+   
 }
 .hidden {
     /* center the cell content */
@@ -125,9 +126,7 @@ footer{
    font-weight: bold;
    background: white;
    border-radius: 8px;
-   
-
-   
+ 
  }
  main{
     text-align: center;
@@ -138,3 +137,13 @@ footer{
     size: 30px;
 }
 
+.restart{
+    display: flex;
+    justify-content:center;
+   
+}
+#resetBut{
+    padding-left: 40px;
+    width: 80px;
+    height: 80px;
+}

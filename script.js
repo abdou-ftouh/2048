@@ -27,6 +27,34 @@ function winner(){
   }
 }
 
+function loser(){
+  let myvar = false;
+
+for(let i = 0; i < 15; i++){
+  for(let j = 0; j < 12; j++){
+  
+      if(square[j].innerHTML === " " || square[j].innerHTML === square[j+4].innerHTML){
+          myvar = true;
+      }
+    }
+    if(square[i].innerHTML === " " || square[i].innerHTML=== square[i+1].innerHTML){
+      myvar = true;
+  }
+}
+
+if(myvar == false){
+   
+    var element = document.querySelector(".grid_container");
+    element.classList.add('loser');
+    square.forEach(taco=>{
+      taco.remove('hidden')
+     
+    })
+    document.removeEventListener('keyup', myControl)
+   
+}
+}
+
 // Colors for each Numbers
 function colours() {
   for (let i=0; i < 16; i++) {
@@ -77,11 +105,11 @@ function generate(){
     if(square[randomNumber].innerHTML==" "){
         square[randomNumber].innerHTML=2
          myScore.innerHTML=score
-     
+          
+         loser()
     }else generate()
-   
+    
    colours()
-
 } 
 generate()
 generate()
@@ -189,7 +217,7 @@ function goRight() {
 
 
 function myControl(e){
-loser()
+
     if (e.key == "d"){
         keyRight()
     }if (e.key == "a"){
@@ -218,7 +246,6 @@ function keyLeft(){
     goLeft()
     generate()
    
-  
 }
 // KeyDown Control
 function keyDown(){
@@ -226,7 +253,6 @@ function keyDown(){
     addNumber2()
     goDown()
     generate()
-    
   
 }
 // KeyUp Control
@@ -235,16 +261,11 @@ function keyUp(){
     addNumber2()
     goUp()
     generate()
-  
-    
+ 
 }
 // My Event 
 document.addEventListener('keyup',myControl)
-function loser(){
-  if(!addNumber1 && !addNumber2 !==true){
-    alert('yououj')
-  }
-}
+
 
 // combine my row numbers
 function addNumber1() {
@@ -276,7 +297,7 @@ function addNumber2() {
       a.innerHTML = 0
       b.innerHTML = total
      score=score+total;
-     
+    
     }
 
   }
@@ -287,10 +308,5 @@ function addNumber2() {
 function gameReset(){
   window.location.reload();
 }
-
-
-
-
-
 
 
