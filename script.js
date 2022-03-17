@@ -1,19 +1,26 @@
 const square=document.querySelectorAll('.hidden')
 
 const myScore=document.getElementById('score')
-const win=document.getElementsByTagName('main')
+
+
 
 // Loop to remplair my squares
 for(let i=0;i<16;i++){
         square[i].innerHTML=" "
        
 }
-
 // Simple winner function
 function winner(){
   for(let i=0;i<16;i++){
     if(square[i].innerHTML == 2048){
-    alert('you are the winner')
+      var element = document.querySelector(".grid_container");
+      element.classList.add('game-over');
+
+      square.forEach(taco=>{
+        taco.remove('hidden')
+       
+      }
+      )
       document.removeEventListener('keyup', myControl)
      
     }
@@ -68,12 +75,13 @@ let score=0
 function generate(){
     let randomNumber=Math.floor(Math.random()*16)
     if(square[randomNumber].innerHTML==" "){
-        square[randomNumber].innerHTML=2  
+        square[randomNumber].innerHTML=2
          myScore.innerHTML=score
-       
+     
     }else generate()
    
    colours()
+
 } 
 generate()
 generate()
@@ -102,6 +110,7 @@ function goRight() {
        
       }
     }
+
   }
 
   //Swipe left
@@ -125,6 +134,7 @@ function goRight() {
        
       }
     }
+
   }
   //Swipe Up
   function goUp() {
@@ -147,6 +157,7 @@ function goRight() {
     
        
       }
+
     }
 
 //Swipe Down
@@ -170,12 +181,15 @@ function goRight() {
         
            
           }
+
         }
        
  
  // My KeyPress Control 
 
+
 function myControl(e){
+loser()
     if (e.key == "d"){
         keyRight()
     }if (e.key == "a"){
@@ -226,9 +240,15 @@ function keyUp(){
 }
 // My Event 
 document.addEventListener('keyup',myControl)
+function loser(){
+  if(!addNumber1 && !addNumber2 !==true){
+    alert('yououj')
+  }
+}
 
 // combine my row numbers
 function addNumber1() {
+
   for (let i =0; i < 15; i++) {
        let a=square[i]
        let b=square[i+1]
@@ -237,14 +257,17 @@ function addNumber1() {
       a.innerHTML = total
       b.innerHTML = 0
       score=score+total;
- 
+     
     }
    
   }
+ 
   winner()
 }
+
 // combine my column numbers
 function addNumber2() {
+
   for (let i =0; i < 12; i++) {
     let a=square[i]
     let b=square[i+4]
@@ -253,9 +276,11 @@ function addNumber2() {
       a.innerHTML = 0
       b.innerHTML = total
      score=score+total;
+     
     }
 
   }
+
   winner()
 }
 // Reset My Game
